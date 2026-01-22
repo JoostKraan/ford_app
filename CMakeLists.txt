@@ -4,7 +4,7 @@ project(ford_app VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Quick)
+find_package(Qt6 REQUIRED COMPONENTS Quick Positioning Location)
 
 qt_standard_project_setup(REQUIRES 6.8)
 
@@ -15,7 +15,9 @@ qt_add_executable(appford_app
 qt_add_qml_module(appford_app
     URI ford_app
     QML_FILES
-        Main.qml
+            Main.qml
+            ui/BottomBar.qml
+            ui/MapScreen.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
@@ -29,9 +31,7 @@ set_target_properties(appford_app PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
-target_link_libraries(appford_app
-    PRIVATE Qt6::Quick
-)
+target_link_libraries(appford_app PRIVATE Qt6::Location)
 
 include(GNUInstallDirs)
 install(TARGETS appford_app

@@ -1,8 +1,17 @@
 import QtQuick
+import "ui/"
 
 Window {
-    width: 640
-    height: 480
+    id: root
+    width: 1280
+    height: 800
     visible: true
-    title: qsTr("Hello World")
+    title: qsTr("Ghia")
+
+    BottomBar {
+        id: bottomBar
+    }
+    MapScreen {
+        id: mapView
+    }
 }
