@@ -7,6 +7,6 @@ Rectangle {
         right: parent.right
         bottom: parent.bottom
     }
-    color: "black"
+    color: "#aaaaaa"
     height: parent.height / 4
 }

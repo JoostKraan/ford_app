@@ -18,6 +18,10 @@ qt_add_qml_module(appford_app
             Main.qml
             ui/BottomBar.qml
             ui/MapScreen.qml
+            RESOURCES
+                vfd.frag
+                vfd.frag.qsb
+
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
