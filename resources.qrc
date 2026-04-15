@@ -1,15 +1,36 @@
 <RCC>
     <qresource prefix="/fonts">
         <file>assets/fonts/Akira Expanded Demo.otf</file>
+        <file>assets/fonts/MatrixChunky8.ttf</file>
+        <file>assets/fonts/eight-bit-dragon.otf</file>
     </qresource>
     <qresource prefix="/icons">
         <file>assets/icons/Lock.png</file>
+        <file>assets/icons/Play.png</file>
+        <file>assets/icons/Bluetooth-Connected.png</file>
+        <file>assets/icons/Bluetooth-Off.png</file>
+        <file>assets/icons/Bluetooth-On.png</file>
+        <file>assets/icons/Pause.png</file>
+        <file>assets/icons/Previous.png</file>
+        <file>assets/icons/Shuffle.png</file>
+        <file>assets/icons/Volume-Off.png</file>
+        <file>assets/icons/Volume-On.png</file>
+        <file>assets/icons/Skip.png</file>
+        <file>assets/icons/Gas.png</file>
+        <file>assets/icons/Car-Battery.png</file>
+        <file>assets/icons/Wifi-Off.png</file>
+        <file>assets/icons/Wifi-On.png</file>
+        <file>assets/icons/Sat-On.png</file>
     </qresource>
     <qresource prefix="/ui">
-        <file>ui/BottomBar.qml</file>
+        <file>ui/BottomLeftBar.qml</file>
         <file>ui/MapScreen.qml</file>
         <file>ui/MediaControl.qml</file>
         <file>Main.qml</file>
+        <file>ui/CarInfo.qml</file>
+        <file>ui/BottomRightBar.qml</file>
+        <file>ui/TopBar.qml</file>
+        <file>ui/TopInfo.qml</file>
     </qresource>
     <qresource prefix="/ui/custom">
         <file>ui/custom/CustomText.qml</file>

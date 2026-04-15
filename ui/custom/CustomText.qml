@@ -9,5 +9,6 @@ Text {
 
     font.family: pixel.name
     font.pointSize: 16
-    color: "white"
+     color: "#ffffff"
+
 }
