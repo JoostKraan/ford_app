@@ -33,7 +33,7 @@ void main() {
     vec4 pixel = texture(src, uv);
     float lum = dot(pixel.rgb, vec3(0.299, 0.587, 0.114));
 
-    // Recolor to phosphor amber
+    // Recolor to phosphor green
     vec3 col = mix(phosphor * dimLevel * 0.3, phosphor * lum, lum);
 
     // Wider bloom pass
@@ -48,16 +48,41 @@ void main() {
     vec3  bloom2  = phosphor * bLum2 * (glowStrength * 0.4);
     col = 1.0 - (1.0 - col) * (1.0 - bloom2);
 
-    // Scanlines
-    float line = mod(floor(uv.y * screenHeight), 6.0);
-    col *= 1.0 - (step(line, 0.5) * scanStrength);
+    // Dot matrix pixel grid
+    float dotSize = 3.0;
+    float dotGap  = 0.2;
+
+    // Convert to actual pixel coordinates
+    vec2 pixelCoord = uv * vec2(1280.0, screenHeight);
+
+    // Which dot cell are we in?
+    vec2 cellIndex = floor(pixelCoord / dotSize);
+
+    // Center of this cell (in pixels)
+    vec2 cellCenter = (cellIndex + 0.5) * dotSize;
+    vec2 cellCenterUV = cellCenter / vec2(1280.0, screenHeight);
+
+    // Sample source at the CENTER of the cell
+    vec4 cellPixel = texture(src, cellCenterUV);
+    float cellLum  = dot(cellPixel.rgb, vec3(0.299, 0.587, 0.114));
+
+    // Distance from fragment to cell center
+    vec2 offset = pixelCoord - cellCenter;
+
+    // Square dots (keep this)
+    float dist = max(abs(offset.x), abs(offset.y));
+
+    // If you want round dots instead, use this instead:
+    // float dist = length(offset);
+
+    float radius = dotSize * (0.5 - dotGap);
+    float inDot  = step(dist, radius);
+
+    // Apply dot + luminance modulation
+    col *= mix(0.08, 1.0, inDot) * mix(0.1, 1.0, cellLum);
 
     // Glass tint
     col = 1.0 - (1.0 - col) * (1.0 - phosphor * tintStrength);
-
-    // Vignette
-    float d = length(uv - vec2(0.5)) * 1.414;
-    col *= 1.0 - d * d * vig;
 
     fragColor = vec4(col, pixel.a) * qt_Opacity;
 }

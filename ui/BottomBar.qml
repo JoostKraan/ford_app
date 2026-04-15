@@ -1,4 +1,4 @@
-import QtQuick 2.15
+import QtQuick
 
 Rectangle {
     id: bottomBar
@@ -7,6 +7,13 @@ Rectangle {
         right: parent.right
         bottom: parent.bottom
     }
-    color: "#aaaaaa"
+    color: "transparent"
     height: parent.height / 4
+    border.color: "#aaaaaa"
+    border.width: 2
+
+    MediaControl{
+        id: mediaControl
+
+    }
 }

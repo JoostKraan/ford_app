@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/fonts">
+        <file>assets/fonts/Akira Expanded Demo.otf</file>
+    </qresource>
+    <qresource prefix="/icons">
+        <file>assets/icons/Lock.png</file>
+    </qresource>
+    <qresource prefix="/ui">
+        <file>ui/BottomBar.qml</file>
+        <file>ui/MapScreen.qml</file>
+        <file>ui/MediaControl.qml</file>
+        <file>Main.qml</file>
+    </qresource>
+    <qresource prefix="/ui/custom">
+        <file>ui/custom/CustomText.qml</file>
+    </qresource>
+</RCC>

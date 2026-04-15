@@ -1,5 +1,5 @@
 import QtQuick
-import "ui/"
+import "ui"
 
 Window {
     id: root
@@ -19,18 +19,19 @@ Window {
             color: "#222222"
         }
 
-        BottomBar {
+        BottomBar  {
             id: bottomBar
         }
     }
 
     ShaderEffect {
-        anchors.fill: parent
+         anchors.fill: parent
         property real glowRadius:   0.012
         property real glowStrength: 0.85
         property real dimLevel:     0.08
         property real scanStrength: 0.45
         property real tintStrength: 0.04
+        property vector4d texSize: Qt.vector4d(src.width, src.height, 0, 0)
         property real vig:          0.40
         property real screenHeight: root.height
 

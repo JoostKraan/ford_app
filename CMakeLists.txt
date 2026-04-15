@@ -3,8 +3,10 @@ cmake_minimum_required(VERSION 3.16)
 project(ford_app VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+SET(CMAKE_AUTORCC ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Quick Positioning Location)
+
+find_package(Qt6 REQUIRED COMPONENTS Quick Positioning Location QuickEffects)
 
 qt_standard_project_setup(REQUIRES 6.8)
 
@@ -17,10 +19,13 @@ qt_add_qml_module(appford_app
     QML_FILES
             Main.qml
             ui/BottomBar.qml
+            ui/MediaControl.qml
             ui/MapScreen.qml
+            ui/custom/CustomText.qml
             RESOURCES
                 vfd.frag
                 vfd.frag.qsb
+                RESOURCES resources.qrc
 
 )
 
@@ -35,7 +40,11 @@ set_target_properties(appford_app PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
-target_link_libraries(appford_app PRIVATE Qt6::Location)
+target_link_libraries(appford_app PRIVATE
+    Qt6::Quick
+    Qt6::Location
+    Qt6::QuickEffects
+)
 
 include(GNUInstallDirs)
 install(TARGETS appford_app
