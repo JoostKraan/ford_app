@@ -17,19 +17,20 @@ Item {
     Column {
         anchors.centerIn: parent
          width: parent.width * 0.8
-        spacing: 12
+        spacing: 5
 
         CustomText {
             text: "Title"
-            font.pointSize: 24
+            font.pointSize: 20
             color: "white"
             horizontalAlignment: Text.AlignHCenter
             width: parent.width
+
         }
 
         CustomText {
             text: "Artist"
-            font.pointSize: 19
+            font.pointSize: 20
             color: "white"
             horizontalAlignment: Text.AlignHCenter
             width: parent.width
@@ -47,7 +48,7 @@ Item {
 
         Column {
             anchors.horizontalCenter: parent.horizontalCenter
-            width: parent.width   // ✅ inherit width from outer column
+            width: parent.width
             spacing: 6
 
             ProgressBar {
@@ -73,7 +74,8 @@ Item {
                 font.pointSize: 18
                 color: "white"
                 horizontalAlignment: Text.AlignHCenter
-                width: parent.width   // ensures true centering
+                width: parent.width
+                bottomPadding: 10
             }
         }
     }

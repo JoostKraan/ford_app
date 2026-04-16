@@ -3,6 +3,8 @@
         <file>assets/fonts/Akira Expanded Demo.otf</file>
         <file>assets/fonts/MatrixChunky8.ttf</file>
         <file>assets/fonts/eight-bit-dragon.otf</file>
+        <file>assets/fonts/VT323-Regular.ttf</file>
+        <file>assets/fonts/Doto-VariableFont_ROND,wght.ttf</file>
     </qresource>
     <qresource prefix="/icons">
         <file>assets/icons/Lock.png</file>
@@ -21,6 +23,7 @@
         <file>assets/icons/Wifi-Off.png</file>
         <file>assets/icons/Wifi-On.png</file>
         <file>assets/icons/Sat-On.png</file>
+        <file>assets/icons/Settings.png</file>
     </qresource>
     <qresource prefix="/ui">
         <file>ui/BottomLeftBar.qml</file>

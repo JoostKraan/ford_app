@@ -20,6 +20,7 @@ Item {
         CustomText {
             anchors.verticalCenter: parent.verticalCenter
             text: "47L"
+            font.pointSize: 22
         }
         Image {
             anchors.verticalCenter: parent.verticalCenter
@@ -30,12 +31,15 @@ Item {
         CustomText {
             anchors.verticalCenter: parent.verticalCenter
             text: "12.2V"
+            font.pointSize: 22
         }
     }
 
     CustomText {
         anchors.centerIn: parent
         text: "22:32"
+        font.pointSize: 24
+        color: "white"
     }
     Row{
         spacing: 15
@@ -47,6 +51,7 @@ Item {
             source: "qrc:/icons/assets/icons/Wifi-Off.png"
             width: 32
             height: 32
+
         }
         Image {
             anchors.verticalCenter: parent.verticalCenter
@@ -57,6 +62,12 @@ Item {
         Image {
             anchors.verticalCenter: parent.verticalCenter
             source: "qrc:/icons/assets/icons/Bluetooth-On.png"
+            width: 32
+            height: 32
+        }
+        Image {
+            anchors.verticalCenter: parent.verticalCenter
+            source: "qrc:/icons/assets/icons/Settings.png"
             width: 32
             height: 32
         }

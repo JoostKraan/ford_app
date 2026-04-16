@@ -17,19 +17,20 @@ qt_add_executable(appford_app
 qt_add_qml_module(appford_app
     URI ford_app
     QML_FILES
-            Main.qml
-            ui/CarInfo.qml
-            ui/TopBar.qml
-            ui/TopInfo.qml
-            ui/BottomLeftBar.qml
-            ui/BottomRightBar.qml
-            ui/MediaControl.qml
-            ui/MapScreen.qml
-            ui/custom/CustomText.qml
+              Main.qml
+              ui/CarInfo.qml
+              ui/TopBar.qml
+              ui/TopInfo.qml
+              ui/BottomLeftBar.qml
+              ui/BottomRightBar.qml
+              ui/MediaControl.qml
+              ui/MapScreen.qml
+              ui/custom/CustomText.qml
             RESOURCES
                 vfd.frag
                 vfd.frag.qsb
                 RESOURCES resources.qrc
+                RESOURCES misc/colors.md
 
 )
 

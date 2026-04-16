@@ -13,6 +13,5 @@ Rectangle {
     color: "transparent"
     border.color: "white"
     border.width: 3
-    TopInfo{
-    }
+    TopInfo{}
 }
