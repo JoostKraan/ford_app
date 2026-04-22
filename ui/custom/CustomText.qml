@@ -1,4 +1,5 @@
-import QtQuick 2.15
+import QtQuick
+import ford_app
 
 Text {
     id: customText
@@ -9,7 +10,7 @@ Text {
 
     font.family: pixel.name
     font.pointSize: 16
-     color: "#ffffff"
+     color: ColorScheme.textPrimary
      font.bold: true
 
 

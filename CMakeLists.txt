@@ -15,6 +15,7 @@ qt_add_qml_module(appford_app
     QML_FILES
         Main.qml
         init/AppConfig.qml
+        ui/ColorScheme.qml
         ui/CarInfo.qml
         ui/TopBar.qml
         ui/TopInfo.qml
@@ -29,6 +30,7 @@ qt_add_qml_module(appford_app
         RESOURCES resources.qrc
         RESOURCES misc/colors.md
         RESOURCES .env
+        RESOURCES ui/qmldir
 )
 
 set_target_properties(appford_app PROPERTIES
@@ -44,6 +46,9 @@ target_link_libraries(appford_app PRIVATE
     Qt6::QuickEffects
     Qt6::WebView
     Qt6::WebEngineQuick
+)
+set_source_files_properties(ui/ColorScheme.qml
+    PROPERTIES QT_QML_SINGLETON_TYPE TRUE
 )
 
 include(GNUInstallDirs)

@@ -15,20 +15,10 @@ layout(std140, binding = 0) uniform buf {
     float uiBottomOffset;
 };
 layout(binding = 1) uniform sampler2D src;
-
-const vec3 phosphor = vec3(0.0, 1.0, 0.706);
-
-vec4 blurSample(vec2 uv, float r) {
-    vec4 acc = vec4(0.0);
-    for (float x = -3.0; x <= 3.0; x += 1.0)
-        for (float y = -3.0; y <= 3.0; y += 1.0)
-            acc += texture(src, uv + vec2(x, y) * r);
-    return acc / 49.0;
-}
+const vec3 phosphor = vec3(0.0, 1.0, 0.533);
 
 void main() {
     vec2 uv = qt_TexCoord0;
-
 
     if (uv.y > uiTopOffset && uv.y < (1.0 - uiBottomOffset)) {
         discard;
@@ -37,16 +27,6 @@ void main() {
     vec4 pixel = texture(src, uv);
     float lum = dot(pixel.rgb, vec3(0.299, 0.587, 0.114));
     vec3 col = mix(phosphor * dimLevel * 0.3, phosphor * lum, lum);
-
-    vec4 blurred = blurSample(uv, glowRadius);
-    float bLum   = dot(blurred.rgb, vec3(0.299, 0.587, 0.114));
-    vec3  bloom  = phosphor * bLum * glowStrength;
-    col = 1.0 - (1.0 - col) * (1.0 - bloom);
-
-    vec4 blurred2 = blurSample(uv, glowRadius * 3.0);
-    float bLum2   = dot(blurred2.rgb, vec3(0.299, 0.587, 0.114));
-    vec3  bloom2  = phosphor * bLum2 * (glowStrength * 0.4);
-    col = 1.0 - (1.0 - col) * (1.0 - bloom2);
 
     float line = mod(floor(uv.y * screenHeight), 6.0);
     col *= 1.0 - (step(line, 0.5) * scanStrength);
@@ -58,3 +38,4 @@ void main() {
 
     fragColor = vec4(col, pixel.a) * qt_Opacity;
 }
+//compile :  /home/joost/Qt/6.11.0/gcc_64/bin/qsb --glsl "100 es,120,150" --hlsl 50 --msl 12 -o /home/joost/Documents/GitHub/ford_app/shaders/vfd.frag.qsb /home/joost/Documents/GitHub/ford_app/shaders/vfd.frag

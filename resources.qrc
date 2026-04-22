@@ -34,6 +34,8 @@
         <file>ui/BottomRightBar.qml</file>
         <file>ui/TopBar.qml</file>
         <file>ui/TopInfo.qml</file>
+        <file>ui/ColorScheme.qml</file>
+        <file>ui/qmldir</file>
     </qresource>
     <qresource prefix="/ui/custom">
         <file>ui/custom/CustomText.qml</file>
