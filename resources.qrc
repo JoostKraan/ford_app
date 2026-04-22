@@ -38,4 +38,14 @@
     <qresource prefix="/ui/custom">
         <file>ui/custom/CustomText.qml</file>
     </qresource>
+    <qresource prefix="/">
+        <file>map.html</file>
+    </qresource>
+    <qresource prefix="/shaders">
+        <file>shaders/vfd.frag</file>
+        <file>shaders/vfd.frag.qsb</file>
+    </qresource>
+    <qresource prefix="/init">
+        <file>init/AppConfig.qml</file>
+    </qresource>
 </RCC>

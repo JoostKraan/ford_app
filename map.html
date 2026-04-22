@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html style="margin:0;padding:0;height:100%;">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8"/>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet"/>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body, #map { width: 100%; height: 100%; }
+        .mapboxgl-ctrl-logo,
+        .mapboxgl-ctrl-attrib,
+        .mapboxgl-ctrl-group { display: none !important; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        window.initMap = function(token) {
+            mapboxgl.accessToken = token;
+            window.map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/joost-kraan/cmoa88kit003601r3gcw8e4w8',
+                center: [4.89, 52.37],
+                zoom: 10
+            });
+        };
+        window.resizeMap = function() {
+            if (window.map) map.resize();
+        };
+    </script>
+</body>
+</html>
